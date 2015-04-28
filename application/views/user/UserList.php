@@ -63,34 +63,6 @@ $ban_reason = array(
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<!--user edit Modal -->
-<div class="modal fade" id="edit_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="width: 50%;" >
-        <div class="modal-content">
-             <form name="ban_user_form" id="ban_user_form">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Ban Reason</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                         <label class="control-label">Ban Reason </label>
-                         <?php echo form_textarea($ban_reason); ?>
-                </div>
-                <input type="hidden" name="ban_user_id" id="ban_user_id">
-            </div>
-            <div class="modal-footer">
-                <img src="<?php echo base_url('assets/images/loading.gif'); ?>"  id="ban_loader" style="display: none"/>
-                <button type="submit"  class="btn btn-success" >Submit</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
-               
-                <div id="ban_alert_area" style="margin-top: 10px"></div> 
-            </div>
-             </form>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
 <!--ban user Modal -->
 <div class="modal fade" id="ban_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width: 50%;" >
@@ -152,8 +124,7 @@ $(document).ready(function(){
             var links="";
             
             links += '<a href="#" data-user_id="'+aData[5]+'" title="View Details" class="btn btn-primary btn-xs view_user" style="margin-right:5px;" ><span style="margin:5px" class="glyphicon glyphicon-search"></span></a>';  
-            links += '<a href="#" data-user_id="'+aData[5]+'" title="Edit Details" class="btn btn-primary btn-xs edit_user" style="margin-right:5px;" ><span style="margin:5px" class="glyphicon glyphicon-pencil"></span></a>'; 
-             if (aData[2] == '1')
+             if (aData[6] == '1')
                     links += '<a href="#" data-user_id="' +  aData[5] + '" title="Un Banned User" class="btn btn-success btn-xs unbanned_user" style="margin-right:5px;"><span style="margin:5px" class="fa fa-check"></sapn>';
                 else
                     links += '<a href="#" data-user_id="' + aData[5] + '" title="Banned User" class="btn btn-danger btn-xs banned_user" style="margin-right:5px;"><span style="margin:5px" class="fa fa-times"></sapn>';
@@ -182,8 +153,7 @@ $(document).ready(function(){
              bSortable: false,
              aTargets: [5]
           },
-         
-          nn                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
           {
              bSearchable: false,
              aTargets: [5]
@@ -229,7 +199,6 @@ $(document).ready(function(){
 
 $(document).on('click','.banned_user',function(e){
  e.preventDefault();
- alert('hello');
  document.getElementById('ban_user_form').reset();
  var ban_user_id = $(this).attr('data-user_id');
  $('#ban_user_id').val(ban_user_id);
@@ -259,7 +228,7 @@ $(document).on('click','.banned_user',function(e){
                 $('#ban_loader').show();
                  var values = $('#ban_user_form').serialize();
                 $.ajax({
-                    url: '<?php echo site_url('user/ban_user') ?>',
+                    url: '<?php echo site_url('User/ban_user') ?>',
                     dataType: 'json',
                      type:'POST',
                      data:values,

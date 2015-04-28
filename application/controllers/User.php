@@ -23,7 +23,7 @@ class User extends CI_Controller
         function get_user_list()
         {
              $this->verify_for_ajax_request();
-             $this->datatables->select('username,email,activated,last_login,created,id')
+             $this->datatables->select('username,email,activated,last_login,created,id,banned')
                    ->from('users');
  
              echo $this->datatables->generate();
@@ -41,7 +41,7 @@ class User extends CI_Controller
        
         $data["admin_data"] = $this->verify_for_direct_request();
         
-        $this->form_validation->set_rules('ban_reason', 'Ban Reason', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('ban_reason', 'Ban Reason', 'trim|required');
         
         if ($this->form_validation->run()) { // validation ok
         

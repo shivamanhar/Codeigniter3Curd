@@ -16,8 +16,8 @@ $config['newline'] = "\r\n";
 $config['protocol'] = "smtp";
 $config['smtp_host'] = "ssl://smtp.gmail.com";
 $config['smtp_port'] = "465";
-$config['smtp_user'] = "gaurav420soni@gmail.com"; 
-$config['smtp_pass'] = "shree0000chur";
+$config['smtp_user'] = "";  //give your email address here
+$config['smtp_pass'] = "";  //give your email password here
 
 
 /* End of file email.php */

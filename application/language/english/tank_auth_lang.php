@@ -37,6 +37,6 @@ $lang['auth_subject_change_email'] = 'Your new email address on %s';
 //user ban
 $lang['user_ban_success']='User has been successfully ban.';
 $lang['user_un_ban_success']='User has been successfully unban.';
-
+$lang['update_error']='Unable to update record.';
 /* End of file tank_auth_lang.php */
 /* Location: ./application/language/english/tank_auth_lang.php */
