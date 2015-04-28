@@ -87,7 +87,7 @@ $(document).ready(function(){
              aTargets: [5]
           },
          
-         
+          nn                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
           {
              bSearchable: false,
              aTargets: [5]
