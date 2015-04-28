@@ -34,7 +34,9 @@ $lang['auth_subject_activate'] = 'Welcome to %s!';
 $lang['auth_subject_forgot_password'] = 'Forgot your password on %s?';
 $lang['auth_subject_reset_password'] = 'Your new password on %s';
 $lang['auth_subject_change_email'] = 'Your new email address on %s';
-
+//user ban
+$lang['user_ban_success']='User has been successfully ban.';
+$lang['user_un_ban_success']='User has been successfully unban.';
 
 /* End of file tank_auth_lang.php */
 /* Location: ./application/language/english/tank_auth_lang.php */
