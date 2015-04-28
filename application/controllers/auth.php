@@ -17,10 +17,7 @@ class Auth extends CI_Controller
 	function index()
 	{
 		if ($message = $this->session->flashdata('message')) {
-                       $this->load->view('include/outer_header');
 			$this->load->view('auth/general_message', array('message' => $message));
-                        $this->load->view('include/outer_footer');
-			
 		} else {
 			redirect('/auth/login/');
 		}
